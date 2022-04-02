@@ -1,16 +1,17 @@
 import React from 'react';
 
-const MouseEvent = (color) => {
-    
+const MouseEvent = ({changeColors,stateColor}) => { 
+
     function randomColor(){
-        setInterval(() => {
-            console.log('hello')
-        }, 1000);
+        changeColors(true)
+    }
+
+    function stopRandomColor() {
+        changeColors(false)
     }
 
     return (
-        <div id='box' style={{width:'225px', height:'255px',backgroundColor:'black'}} onMouseOver={()=>randomColor()}>
-            
+        <div id='box' style={{width:'225px', height:'255px',backgroundColor:`rgb(${stateColor}`}} onMouseOver={()=>randomColor()} onMouseLeave={()=>stopRandomColor()} onDoubleClick={()=>stopRandomColor()}>
         </div>
     );
 }
