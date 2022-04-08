@@ -15,11 +15,9 @@ const Main = () => {
         }, 1000)
         :
         clearInterval(intervalID);
-
         ;return () => {
             clearInterval(intervalID)
         };
-
     }, [changeColor,stateColor]);
 
     function changeStateColors(newcolors) {
